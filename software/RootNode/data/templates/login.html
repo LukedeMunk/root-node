@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
+        <link rel="icon" href="/favicon.ico">
+        <link rel="stylesheet" href="/variables.css">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        <header class="site-header">
+            <nav class="navigation" data-i18n-aria-label="appName">
+                <a class="brand-link" href="/" data-i18n-aria-label="appName">
+                    <img class="brand-mark" aria-hidden="true" src="/favicon.ico"></img>
+                    <span class="brand-text" data-i18n="appName"></span>
+                </a>
+                <ul class="navigation-links">
+                    <li>
+                        <a class="navigation-link" href="/" data-navigation-page="dashboard" data-i18n="navDashboard"></a>
+                    </li>
+                    <li>
+                        <a class="navigation-link" href="/device" data-navigation-page="admin" data-i18n="navAdmin"></a>
+                    </li>
+                    <li class="language-menu">
+                        <button id="languageBtn" class="menu-button" type="button" aria-expanded="false" aria-controls="languageOptions" data-i18n="navLanguage"></button>
+                        <ul id="languageOptions" class="menu-options" role="radiogroup" hidden>
+                            <li>
+                                <button class="menu-option" type="button" role="radio" data-language-option="en" data-i18n="languageEnglish"></button>
+                            </li>
+                            <li>
+                                <button class="menu-option" type="button" role="radio" data-language-option="nl" data-i18n="languageDutch"></button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="theme-menu">
+                        <button id="themeBtn" class="menu-button" type="button" aria-expanded="false" aria-controls="themeOptions" data-i18n="navTheme"></button>
+                        <ul id="themeOptions" class="menu-options" role="radiogroup" hidden>
+                            <li>
+                                <button class="menu-option" type="button" role="radio" data-theme-option="dark-blue" data-i18n="themeDarkBlue"></button>
+                            </li>
+                            <li>
+                                <button class="menu-option" type="button" role="radio" data-theme-option="dark-green" data-i18n="themeDarkGreen"></button>
+                            </li>
+                            <li>
+                                <button class="menu-option" type="button" role="radio" data-theme-option="light-blue" data-i18n="themeLightBlue"></button>
+                            </li>
+                            <li>
+                                <button class="menu-option" type="button" role="radio" data-theme-option="light-green" data-i18n="themeLightGreen"></button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a id="authLink" class="navigation-link" href="/login" data-i18n="login"></a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="page-shell login-layout">
+            <section class="page-hero" aria-labelledby="pageTitle">
+                <p class="eyebrow" data-i18n="loginEyebrow"></p>
+                <h1 id="pageTitle" data-i18n="loginTitle"></h1>
+                <p class="lead" data-i18n="loginDescription"></p>
+            </section>
+            <section class="card" aria-labelledby="loginFormTitle">
+                <h2 id="loginFormTitle" data-i18n="loginFormTitle"></h2>
+                <form id="loginForm" class="form-stack" method="post">
+                    <div class="field-group">
+                        <label class="field-label" for="usernameTxt" data-i18n="usernameLabel"></label>
+                        <input id="usernameTxt" class="text-input" type="text" name="username" autocomplete="username" data-i18n-placeholder="usernamePlaceholder" required autofocus>
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label" for="loginPasswordTxt" data-i18n="passwordLabel"></label>
+                        <input id="loginPasswordTxt" class="text-input" type="password" name="password" autocomplete="current-password" data-i18n-placeholder="loginPasswordPlaceholder" required>
+                    </div>
+                    <p id="loginMessageField" class="message" role="status" aria-live="polite" hidden></p>
+                    <button id="loginBtn" class="button" type="submit" data-i18n="loginSubmit"></button>
+                </form>
+            </section>
+        </main>
+        <footer class="site-footer">
+            <span data-i18n="footer"></span>
+        </footer>
+        <script type="module" src="/login.js"></script>
+    </body>
+</html>

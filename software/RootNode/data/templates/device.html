@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
+        <link rel="icon" href="/favicon.ico">
+        <link rel="stylesheet" href="/variables.css">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        <header class="site-header">
+            <nav class="navigation" data-i18n-aria-label="appName">
+                <a class="brand-link" href="/" data-i18n-aria-label="appName">
+                    <img class="brand-mark" aria-hidden="true" src="/favicon.ico"></img>
+                    <span class="brand-text" data-i18n="appName"></span>
+                </a>
+                <ul class="navigation-links">
+                    <li>
+                        <a class="navigation-link" href="/" data-navigation-page="dashboard" data-i18n="navDashboard"></a>
+                    </li>
+                    <li>
+                        <a class="navigation-link" href="/device" data-navigation-page="admin" data-i18n="navAdmin"></a>
+                    </li>
+                    <li class="language-menu">
+                        <button id="languageBtn" class="menu-button" type="button" aria-expanded="false" aria-controls="languageOptions" data-i18n="navLanguage"></button>
+                        <ul id="languageOptions" class="menu-options" role="radiogroup" hidden>
+                            <li>
+                                <button class="menu-option" type="button" role="radio" data-language-option="en" data-i18n="languageEnglish"></button>
+                            </li>
+                            <li>
+                                <button class="menu-option" type="button" role="radio" data-language-option="nl" data-i18n="languageDutch"></button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="theme-menu">
+                        <button id="themeBtn" class="menu-button" type="button" aria-expanded="false" aria-controls="themeOptions" data-i18n="navTheme"></button>
+                        <ul id="themeOptions" class="menu-options" role="radiogroup" hidden>
+                            <li>
+                                <button class="menu-option" type="button" role="radio" data-theme-option="dark-blue" data-i18n="themeDarkBlue"></button>
+                            </li>
+                            <li>
+                                <button class="menu-option" type="button" role="radio" data-theme-option="dark-green" data-i18n="themeDarkGreen"></button>
+                            </li>
+                            <li>
+                                <button class="menu-option" type="button" role="radio" data-theme-option="light-blue" data-i18n="themeLightBlue"></button>
+                            </li>
+                            <li>
+                                <button class="menu-option" type="button" role="radio" data-theme-option="light-green" data-i18n="themeLightGreen"></button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a id="authLink" class="navigation-link" href="/login" data-i18n="login"></a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="page-shell">
+            <section class="page-hero" aria-labelledby="pageTitle">
+                <p class="eyebrow" data-i18n="adminEyebrow"></p>
+                <h1 id="pageTitle" data-i18n="adminTitle"></h1>
+                <p class="lead" data-i18n="adminDescription"></p>
+            </section>
+            <section class="card-grid" data-i18n-aria-label="adminEyebrow">
+                <article class="card" data-role-required="admin" hidden>
+                    <h2 data-i18n="downloadCardTitle"></h2>
+                    <p class="card-description" data-i18n="downloadCardDescription"></p>
+                    <div class="card-actions">
+                        <a class="button" href="/files" data-i18n="openDownloadPage"></a>
+                    </div>
+                </article>
+                <article class="card">
+                    <h2 data-i18n="uploadCardTitle"></h2>
+                    <p class="card-description" data-i18n="uploadCardDescription"></p>
+                    <dl class="device-information">
+                        <div>
+                            <dt data-i18n="chipModel"></dt>
+                            <dd id="chipModelField" data-i18n="informationUnavailable"></dd>
+                        </div>
+                        <div>
+                            <dt data-i18n="chipId"></dt>
+                            <dd id="chipIdField" data-i18n="informationUnavailable"></dd>
+                        </div>
+                        <div>
+                            <dt data-i18n="flashSize"></dt>
+                            <dd id="flashSizeField" data-i18n="informationUnavailable"></dd>
+                        </div>
+                        <div>
+                            <dt data-i18n="freeHeap"></dt>
+                            <dd id="freeHeapField" data-i18n="informationUnavailable"></dd>
+                        </div>
+                        <div>
+                            <dt data-i18n="firmwareVersion"></dt>
+                            <dd id="firmwareVersionField" data-i18n="informationUnavailable"></dd>
+                        </div>
+                        <div>
+                            <dt data-i18n="buildVersion"></dt>
+                            <dd id="buildVersionField" data-i18n="informationUnavailable"></dd>
+                        </div>
+                        <div>
+                            <dt data-i18n="hostname"></dt>
+                            <dd id="hostnameField" data-i18n="informationUnavailable"></dd>
+                        </div>
+                        <div>
+                            <dt data-i18n="ipAddress"></dt>
+                            <dd id="ipAddressField" data-i18n="informationUnavailable"></dd>
+                        </div>
+                    </dl>
+                    <p id="deviceInfoMessageField" class="loading-state" role="status" data-i18n="deviceInfoLoading"></p>
+                </article>
+                <article class="card" data-role-required="admin" hidden>
+                    <h2 data-i18n="restartCardTitle"></h2>
+                    <p class="card-description" data-i18n="restartCardDescription"></p>
+                    <div class="card-actions">
+                        <button id="restartBtn" class="button-danger" type="button" data-i18n="restartDevice"></button>
+                    </div>
+                    <p id="restartMessageField" class="message" role="status" hidden></p>
+                </article>
+                <article class="card" data-role-required="admin" hidden>
+                    <h2 data-i18n="resetNetworkCardTitle"></h2>
+                    <p class="card-description" data-i18n="resetNetworkCardDescription"></p>
+                    <div class="card-actions">
+                        <button id="resetNetworkBtn" class="button-danger" type="button" data-i18n="resetNetwork"></button>
+                    </div>
+                    <p id="resetNetworkMessageField" class="message" role="status" hidden></p>
+                </article>
+            </section>
+        </main>
+        <dialog id="restartDialog" class="dialog" data-role-required="admin" hidden>
+            <h2 data-i18n="restartConfirmTitle"></h2>
+            <p class="card-description" data-i18n="restartConfirmMessage"></p>
+            <div class="dialog-actions">
+                <button id="restartCancelBtn" class="button-secondary" type="button" data-i18n="cancel"></button>
+                <button id="restartConfirmBtn" class="button-danger" type="button" data-i18n="confirmRestart"></button>
+            </div>
+        </dialog>
+        <dialog id="resetNetworkDialog" class="dialog" data-role-required="admin" hidden>
+            <h2 data-i18n="resetNetworkConfirmTitle"></h2>
+            <p class="card-description" data-i18n="resetNetworkConfirmMessage"></p>
+            <div class="dialog-actions">
+                <button id="resetNetworkCancelBtn" class="button-secondary" type="button" data-i18n="cancel"></button>
+                <button id="resetNetworkConfirmBtn" class="button-danger" type="button" data-i18n="confirmResetNetwork"></button>
+            </div>
+        </dialog>
+        <footer class="site-footer">
+            <span data-i18n="footer"></span>
+        </footer>
+        <script type="module" src="/device.js"></script>
+    </body>
+</html>

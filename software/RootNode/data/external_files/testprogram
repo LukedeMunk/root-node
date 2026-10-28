@@ -1,0 +1,46 @@
+testprogram:     file format elf32-littlearm
+
+Disassembly of section .init:
+
+00010438 <main>:
+   10438: e92d4800  push  {fp, lr}
+   1043c: e28db004  add fp, sp, #4
+   10440: e24dd018  sub sp, sp, #24
+   10444: e50b0018  str r0, [fp, #-24]  ; 0xffffffe8
+   10448: e50b101c  str r1, [fp, #-28]  ; 0xffffffe4
+   1044c: e51b301c  ldr r3, [fp, #-28]  ; 0xffffffe4
+   10450: e2833004  add r3, r3, #4
+   10454: e5932000  ldr r2, [r3]
+   10458: e24b3010  sub r3, fp, #16
+   1045c: e1a01002  mov r1, r2
+   10460: e1a00003  mov r0, r3
+   10464: ebffffab  bl  10318 <strcpy@plt>
+   10468: e55b3010  ldrb  r3, [fp, #-16]
+   1046c: e1a00003  mov r0, r3
+   10470: eb000004  bl  10488 <login>
+   10474: eb00000d  bl  104b0 <logout>
+   10478: e3a03000  mov r3, #0
+   1047c: e1a00003  mov r0, r3
+   10480: e24bd004  sub sp, fp, #4
+   10484: e8bd8800  pop {fp, pc}
+
+00010488 <login>:
+   10488: e92d4800  push  {fp, lr}
+   1048c: e28db004  add fp, sp, #4
+   10490: e24dd008  sub sp, sp, #8
+   10494: e50b0008  str r0, [fp, #-8]
+   10498: e59f000c  ldr r0, [pc, #12] ; 104ac <login+0x24>
+   1049c: ebffff9a  bl  1030c <printf@plt>
+   104a0: e1a00000  nop     ; (mov r0, r0)
+   104a4: e24bd004  sub sp, fp, #4
+   104a8: e8bd8800  pop {fp, pc}
+   104ac: 0001053c  .word 0x0001053c
+
+000104b0 <logout>:
+   104b0: e92d4800  push  {fp, lr}
+   104b4: e28db004  add fp, sp, #4
+   104b8: e59f0008  ldr r0, [pc, #8]  ; 104c8 <logout+0x18>
+   104bc: ebffff92  bl  1030c <printf@plt>
+   104c0: e1a00000  nop     ; (mov r0, r0)
+   104c4: e8bd8800  pop {fp, pc}
+   104c8: 00010548  .word 0x00010548

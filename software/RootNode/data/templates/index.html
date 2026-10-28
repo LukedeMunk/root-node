@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#071120">
+        <title></title>
+        <link rel="icon" href="/favicon.ico">
+        <link rel="stylesheet" href="/variables.css">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        <header class="site-header">
+            <nav class="navigation" data-i18n-aria-label="appName">
+                <a class="brand-link" href="/" data-i18n-aria-label="appName">
+                    <img class="brand-mark" aria-hidden="true" src="/favicon.ico"></img>
+                    <span class="brand-text" data-i18n="appName"></span>
+                </a>
+                <ul class="navigation-links">
+                    <li>
+                        <a class="navigation-link" href="/" data-navigation-page="dashboard" data-i18n="navDashboard"></a>
+                    </li>
+                    <li>
+                        <a class="navigation-link" href="/device" data-navigation-page="admin" data-i18n="navAdmin"></a>
+                    </li>
+                    <li class="language-menu">
+                        <button id="languageBtn" class="menu-button" type="button" aria-expanded="false" aria-controls="languageOptions" data-i18n="navLanguage"></button>
+                        <ul id="languageOptions" class="menu-options" role="radiogroup" hidden>
+                            <li>
+                                <button class="menu-option" type="button" role="radio" data-language-option="en" data-i18n="languageEnglish"></button>
+                            </li>
+                            <li>
+                                <button class="menu-option" type="button" role="radio" data-language-option="nl" data-i18n="languageDutch"></button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="theme-menu">
+                        <button id="themeBtn" class="menu-button" type="button" aria-expanded="false" aria-controls="themeOptions" data-i18n="navTheme"></button>
+                        <ul id="themeOptions" class="menu-options" role="radiogroup" hidden>
+                            <li>
+                                <button class="menu-option" type="button" role="radio" data-theme-option="dark-blue" data-i18n="themeDarkBlue"></button>
+                            </li>
+                            <li>
+                                <button class="menu-option" type="button" role="radio" data-theme-option="dark-green" data-i18n="themeDarkGreen"></button>
+                            </li>
+                            <li>
+                                <button class="menu-option" type="button" role="radio" data-theme-option="light-blue" data-i18n="themeLightBlue"></button>
+                            </li>
+                            <li>
+                                <button class="menu-option" type="button" role="radio" data-theme-option="light-green" data-i18n="themeLightGreen"></button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a id="authLink" class="navigation-link" href="/login" data-i18n="login"></a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="page-shell">
+            <section class="page-hero" aria-labelledby="pageTitle">
+                <p class="eyebrow" data-i18n="indexEyebrow"></p>
+                <h1 id="pageTitle" class="dashboard-title" data-i18n="indexTitle"></h1>
+                <p class="lead" data-i18n="indexDescription"></p>
+            </section>
+            <section class="dashboard-grid" data-i18n-aria-label="indexEyebrow">
+                <article class="card" data-role-required="user" hidden>
+                    <div class="card-header">
+                        <div>
+                            <h2 data-i18n="deviceStatus"></h2>
+                            <p class="card-description" data-i18n="deviceStatusDescription"></p>
+                        </div>
+                        <span id="deviceStatusField" class="status" role="status" data-i18n="statusLoading"></span>
+                    </div>
+                    <div class="control-row">
+                        <div>
+                            <h3 data-i18n="powerTitle"></h3>
+                            <p class="card-description" data-i18n="powerDescription"></p>
+                        </div>
+                        <label class="switch-control">
+                            <input id="powerToggle" class="switch-input" type="checkbox" data-i18n-aria-label="powerToggle" disabled>
+                            <span class="switch-track" aria-hidden="true"></span>
+                        </label>
+                    </div>
+                </article>
+                
+                <article class="card" data-role-required="user" hidden>
+                    <div class="card-header">
+                        <div>
+                            <h2 data-i18n="brightnessTitle"></h2>
+                            <p class="card-description" data-i18n="brightnessDescription"></p>
+                        </div>
+                    </div>
+                    <div class="range-row">
+                        <input id="brightnessRange" class="range-control" type="range" min="0" max="1023" value="1023" data-i18n-aria-label="brightnessValue" disabled>
+                        <output id="brightnessOutput" class="range-value" for="brightnessRange"></output>
+                    </div>
+                </article>
+
+                <article class="card card-wide">
+                    <h2 data-i18n="quickActionsTitle"></h2>
+                    <p class="card-description" data-i18n="quickActionsDescription"></p>
+                    <div class="card-actions">
+                        <a class="button" href="/device" data-i18n="openAdmin"></a>
+                        <a class="button-secondary" href="/files" data-i18n="openDownloads"></a>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <footer class="site-footer">
+            <span data-i18n="footer"></span>
+        </footer>
+        <script type="module" src="/index.js"></script>
+    </body>
+</html>

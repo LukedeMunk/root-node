@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
+        <link rel="icon" href="/favicon.ico">
+        <link rel="stylesheet" href="/variables.css">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    
+    <body>
+        <main class="page-shell">
+            <section class="page-hero" aria-labelledby="pageTitle">
+                <p class="eyebrow" data-i18n="networkEyebrow"></p>
+                <h1 id="pageTitle" data-i18n="networkTitle"></h1>
+                <p class="lead" data-i18n="networkDescription"></p>
+            </section>
+
+            <section class="card card-wide" aria-labelledby="networkFormTitle">
+                <div class="card-header">
+                    <div>
+                        <h2 id="networkFormTitle" data-i18n="networkFormTitle"></h2>
+                        <p class="card-description" data-i18n="networkFormDescription"></p>
+                    </div>
+                </div>
+
+                <form id="networkForm" class="form-stack" action="/configure_network" method="post" novalidate>
+                    <div class="field-group">
+                        <label class="field-label" for="networkSsidInput" data-i18n="ssidLabel"></label>
+                        <input id="networkSsidInput" class="text-input" type="text" name="ssid" maxlength="50" autocomplete="off" data-i18n-placeholder="ssidPlaceholder">
+                    </div>
+
+                    <div class="field-group">
+                        <label class="field-label" for="networkPasswordInput" data-i18n="passwordLabel"></label>
+                        <input id="networkPasswordInput" class="text-input" type="password" name="password" minlength="8" maxlength="64" autocomplete="current-password" data-i18n-placeholder="passwordPlaceholder">
+                    </div>
+
+                    <p id="networkMessageField" class="message" role="alert" hidden></p>
+
+                    <div>
+                        <button class="button" type="submit" data-i18n="saveNetwork"></button>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+        <dialog id="networkDialog" class="dialog">
+            <h2 data-i18n="networkConfirmTitle"></h2>
+            <p class="card-description" data-i18n="networkConfirmMessage"></p>
+            <div class="dialog-actions">
+                <button id="networkCancelBtn" class="button-secondary" type="button" data-i18n="cancel"></button>
+                <button id="networkConfirmBtn" class="button" type="button" data-i18n="confirmSave"></button>
+            </div>
+        </dialog>
+
+        <footer class="site-footer">
+            <span data-i18n="footer"></span>
+        </footer>
+
+        <script type="module" src="/network_config.js"></script>
+    </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
+        <link rel="icon" href="/favicon.ico">
+        <link rel="stylesheet" href="/variables.css">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        <header class="site-header">
+            <nav class="navigation" data-i18n-aria-label="appName">
+                <a class="brand-link" href="/" data-i18n-aria-label="appName">
+                    <img class="brand-mark" aria-hidden="true" src="/favicon.ico"></img>
+                    <span class="brand-text" data-i18n="appName"></span>
+                </a>
+                <ul class="navigation-links">
+                    <li>
+                        <a class="navigation-link" href="/" data-navigation-page="dashboard" data-i18n="navDashboard"></a>
+                    </li>
+                    <li>
+                        <a class="navigation-link" href="/device" data-navigation-page="admin" data-i18n="navAdmin"></a>
+                    </li>
+                    <li class="language-menu">
+                        <button id="languageBtn" class="menu-button" type="button" aria-expanded="false" aria-controls="languageOptions" data-i18n="navLanguage"></button>
+                        <ul id="languageOptions" class="menu-options" role="radiogroup" hidden>
+                            <li>
+                                <button class="menu-option" type="button" role="radio" data-language-option="en" data-i18n="languageEnglish"></button>
+                            </li>
+                            <li>
+                                <button class="menu-option" type="button" role="radio" data-language-option="nl" data-i18n="languageDutch"></button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="theme-menu">
+                        <button id="themeBtn" class="menu-button" type="button" aria-expanded="false" aria-controls="themeOptions" data-i18n="navTheme"></button>
+                        <ul id="themeOptions" class="menu-options" role="radiogroup" hidden>
+                            <li>
+                                <button class="menu-option" type="button" role="radio" data-theme-option="dark-blue" data-i18n="themeDarkBlue"></button>
+                            </li>
+                            <li>
+                                <button class="menu-option" type="button" role="radio" data-theme-option="dark-green" data-i18n="themeDarkGreen"></button>
+                            </li>
+                            <li>
+                                <button class="menu-option" type="button" role="radio" data-theme-option="light-blue" data-i18n="themeLightBlue"></button>
+                            </li>
+                            <li>
+                                <button class="menu-option" type="button" role="radio" data-theme-option="light-green" data-i18n="themeLightGreen"></button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a id="authLink" class="navigation-link" href="/login" data-i18n="login"></a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="page-shell">
+            <section class="page-hero" aria-labelledby="pageTitle">
+                <p class="eyebrow" data-i18n="downloadEyebrow"></p>
+                <h1 id="pageTitle" data-i18n="downloadTitle"></h1>
+                <p class="lead" data-i18n="downloadDescription"></p>
+            </section>
+            <section class="file-management-grid">
+                <article id="uploadCard" class="card" aria-labelledby="uploadFormTitle" data-role-required="admin" hidden>
+                    <h2 id="uploadFormTitle" data-i18n="uploadFormTitle"></h2>
+                    <p class="card-description" data-i18n="uploadFormDescription"></p>
+                    <form id="uploadForm" class="form-stack" enctype="multipart/form-data">
+                        <div class="field-group">
+                            <span class="field-label" data-i18n="chooseFile"></span>
+                            <input id="uploadFileInput" class="visually-hidden" type="file" name="name" required>
+                            <div class="card-actions">
+                                <label class="button-secondary" for="uploadFileInput" data-i18n="chooseFile"></label>
+                                <span id="selectedFileField" class="helper-text" data-i18n="noFileChosen"></span>
+                            </div>
+                        </div>
+                        <button id="uploadBtn" class="button" type="submit" data-i18n="uploadFile"></button>
+                    </form>
+                </article>
+                <article id="fileExplorerCard" class="card" aria-labelledby="fileListTitle">
+                    <h2 id="fileListTitle" data-i18n="fileListTitle"></h2>
+                    <p class="card-description" data-i18n="fileListDescription"></p>
+                    <div class="file-explorer-toolbar">
+                        <button id="parentDirectoryBtn" class="button-secondary" type="button" data-i18n="parentDirectory" hidden></button>
+                        <nav class="file-breadcrumb-navigation" data-i18n-aria-label="fileExplorerLabel">
+                            <ol id="fileBreadcrumbs" class="file-breadcrumbs"></ol>
+                        </nav>
+                    </div>
+                    <div id="fileLoadingField" class="loading-state" role="status">
+                        <span class="spinner" aria-hidden="true"></span>
+                        <span data-i18n="filesLoading"></span>
+                    </div>
+                    <p id="fileEmptyField" class="empty-state" hidden></p>
+                    <p id="fileErrorField" class="message message-error" role="alert" hidden></p>
+                    <ul id="fileList" class="file-list" hidden></ul>
+                </article>
+            </section>
+            <p id="fileMessageField" class="message" role="status" aria-live="polite" hidden></p>
+        </main>
+        <footer class="site-footer">
+            <span data-i18n="footer"></span>
+        </footer>
+        <script type="module" src="/files.js"></script>
+    </body>
+</html>
