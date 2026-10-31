@@ -18,7 +18,7 @@
 #include "UserHandler.h"                                                        //For handling the users from the configuration.conf
 #include "SerialCommandExecuter.h"                                              //For handling serial commands
 #include "Debugger.h"                                                           //For handling debug messages
-#include "PersistentMemory.h"                                                      //For reading and writing the hostname
+#include "PersistentMemory.h"                                                   //For reading and writing the hostname
 #include "StartupText.h"                                                        //For printing startup log files
 
 #define EXTERNAL_UPLOAD_TEMP_PATH       EXTERNAL_FILE_FOLDER    "/.upload.tmp"

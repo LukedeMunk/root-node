@@ -12,6 +12,7 @@
 #ifndef DEBUGGER_H
 #define DEBUGGER_H
 #include "Arduino.h"
+#include "PersistentMemory.h"
 
 void debug(String text, bool forcePrint = false);
 void debugln(String text, bool forcePrint = false);
