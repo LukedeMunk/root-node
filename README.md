@@ -57,6 +57,17 @@ The following software is required:
 
 When contributing to this repository, please read [CONTRIBUTING.md](CONTRIBUTING.md), [HTML/CSS/JavaScript conventions](documentation/software/HTML_CSS_JAVASCRIPT_CONVENTIONS.md) and [C/C++ conventions](documentation/software/CPP_CONVENTIONS.md).
 
+### Roadmap
+
+Below is a roadmap for the RootNode, highlighting the key versions. This roadmap is intended as a brainstorming outline, and all features are subject to change. Any suggestions? Please contact Luke de Munk.
+
+| **Version**   | **Expected release**  | **Key features**                      |
+|-------------  |---------------------- |------------------------------------   |
+| v1.1.0        | ?                     | - Add exploitable OTA                 |
+|               |                       | - Add path traversal                  |
+|               |                       | - Add example brute-force script      |
+|               |                       | - Add explaination of firmware dump   |
+
 ## Authors
 
 * **Luke de Munk** - *Head author* - [LinkedIn](https://www.linkedin.com/in/luke-de-munk/)
