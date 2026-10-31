@@ -1,0 +1,5 @@
+TODO before production release:
+
+- Remove testprogram and testprogram.c from /home/user.
+- Remove the related objdump and development challenge tooling.
+- Verify that no other development artifacts remain on the device.
