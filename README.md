@@ -2,7 +2,7 @@
 
 RootNode is an ESP8266 based IoT device containing intentionally designed vulnerabilities for practising ethical hacking in a controlled environment. The project is inspired by the OWASP IoT Top 10 (2018) and demonstrates vulnerabilities such as weak or hardcoded passwords, insecure network services, insufficient access control, insecure data storage, buffer overflows and a lack of physical hardening.
 
-The practical objectives and supporting hints are available in [`Goals.pdf`](documentation/Goals.pdf). Detailed explanations of the vulnerabilities and their solutions can be found in [`Exploitable_vulnerabilities_and_answers.pdf`](documentation/Exploitable_vulnerabilities_and_answers.pdf).
+The practical objectives are available in [`Goals.pdf`](documentation/Goals.pdf). Detailed explanations of the vulnerabilities and their solutions can be found in [`Exploitable_vulnerabilities_and_answers.pdf`](documentation/Exploitable_vulnerabilities_and_answers.pdf).
 
 This README provides the technical information required to set up the project. It describes the required hardware and software, explains how to install and upload the firmware and filesystem, and covers the initial Wi-Fi configuration and basic device usage.
 
