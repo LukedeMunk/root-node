@@ -9,10 +9,7 @@
  *          More information: https://github.com/LukedeMunk/root-node
  */
 /******************************************************************************/
-import {
-    TEXT_APP_NAME,
-    TEXT_TRANSLATIONS as ENGLISH_TRANSLATIONS
-} from "./language_pack_english.js";
+import { ENGLISH_TRANSLATIONS } from "./language_pack_english.js";
 import { DUTCH_TRANSLATIONS } from "./language_pack_dutch.js";
 
 const THEME_STORAGE_KEY = "RootNodeTheme";
